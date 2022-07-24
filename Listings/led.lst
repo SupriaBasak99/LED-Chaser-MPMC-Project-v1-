@@ -1,0 +1,84 @@
+A51 MACRO ASSEMBLER  LED                                                                  05/04/2021 00:16:11 PAGE     1
+
+
+MACRO ASSEMBLER A51 V8.2.7.0
+OBJECT MODULE PLACED IN .\Objects\led.obj
+ASSEMBLER INVOKED BY: C:\Keil_v5\C51\BIN\A51.EXE ..\led.asm SET(SMALL) DEBUG PRINT(.\Listings\led.lst) OBJECT(.\Objects\
+                      led.obj) EP
+
+LOC  OBJ            LINE     SOURCE
+
+0000                   1     ORG 00H
+0000 75A0FF            2             MOV P2, #0FFH 
+0003                   3             AGAIN:
+                       4             
+0003 75A000            5             MOV P2, #00000000B
+0006 1156              6             ACALL DELAY
+0008 75A001            7             MOV P2, #00000001B
+000B 1156              8             ACALL DELAY
+000D 75A003            9         MOV P2, #00000011B
+0010 1156             10             ACALL DELAY
+0012 75A007           11         MOV P2, #00000111B
+0015 1156             12             ACALL DELAY
+0017 75A00F           13         MOV P2, #00001111B
+001A 1156             14             ACALL DELAY
+001C 75A01F           15         MOV P2, #00011111B
+001F 1156             16             ACALL DELAY
+0021 75A03F           17         MOV P2, #00111111B
+0024 1156             18             ACALL DELAY
+0026 75A07F           19         MOV P2, #01111111B
+0029 1156             20             ACALL DELAY
+002B 75A0FF           21         MOV P2, #11111111B
+002E 1156             22             ACALL DELAY
+                      23     
+                      24     
+                      25     
+0030 75A0FE           26         MOV P2, #11111110B
+0033 1156             27             ACALL DELAY
+0035 75A0FC           28         MOV P2, #11111100B
+0038 1156             29             ACALL DELAY
+003A 75A0F8           30         MOV P2, #11111000B
+003D 1156             31             ACALL DELAY
+003F 75A0F0           32         MOV P2, #11110000B
+0042 1156             33             ACALL DELAY
+0044 75A0E0           34         MOV P2, #11100000B
+0047 1156             35             ACALL DELAY
+0049 75A0C0           36         MOV P2, #11000000B
+004C 1156             37             ACALL DELAY
+004E 75A080           38         MOV P2, #10000000B
+0051 1156             39             ACALL DELAY
+                      40         
+0053 020003           41         LJMP AGAIN
+                      42     
+                      43     
+0056                  44     DELAY:
+0056 7910             45             MOV R1,#10H
+0058 7A50             46     HERE3:  MOV R2,#50H
+005A 7B50             47     HERE2:  MOV R3,#50H
+005C DBFE             48     HERE:   DJNZ R3,HERE
+005E DAFA             49             DJNZ R2,HERE2
+0060 D9F6             50             DJNZ R1,HERE3
+0062 22               51             RET
+                      52             END
+                             
+                                     
+A51 MACRO ASSEMBLER  LED                                                                  05/04/2021 00:16:11 PAGE     2
+
+SYMBOL TABLE LISTING
+------ ----- -------
+
+
+N A M E             T Y P E  V A L U E   ATTRIBUTES
+
+AGAIN. . . . . . .  C ADDR   0003H   A   
+DELAY. . . . . . .  C ADDR   0056H   A   
+HERE . . . . . . .  C ADDR   005CH   A   
+HERE2. . . . . . .  C ADDR   005AH   A   
+HERE3. . . . . . .  C ADDR   0058H   A   
+P2 . . . . . . . .  D ADDR   00A0H   A   
+
+
+REGISTER BANK(S) USED: 0 
+
+
+ASSEMBLY COMPLETE.  0 WARNING(S), 0 ERROR(S)
